@@ -128,7 +128,7 @@ void CAISocket::RecvServerInfo(Packet & pkt)
 		g_pMain->m_bFirstServerFlag = true;
 		g_pMain->m_bPointCheckFlag = true;
 
-		printf("All spawn data loaded.\n");
+		printf("Todos los datos cargados.\n");
 	}
 }
 

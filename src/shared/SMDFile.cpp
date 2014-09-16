@@ -37,7 +37,7 @@ SMDFile *SMDFile::Load(std::string mapName, bool bLoadWarpsAndRegeneEvents /*= f
 	FILE *fp = fopen(filename.c_str(), "rb");
 	if (fp == nullptr)
 	{
-		printf("ERROR: %s does not exist or no permission to access.\n", filename.c_str());
+		printf("ERROR: %s no existe o no tiene permisos de acceso.\n", filename.c_str());
 		return nullptr;
 	}
 
@@ -61,15 +61,15 @@ SMDFile *SMDFile::Load(std::string mapName, bool bLoadWarpsAndRegeneEvents /*= f
 
 void SMDFile::OnInvalidMap()
 {
-	printf("\n ** An error has occurred **\n\n");
-	printf("ERROR: %s is not a valid map file.\n\n", m_MapName.c_str());
+	printf("\n ** Ha ocurrido un error **\n\n");
+	printf("ERROR: %s no es un fichero de mapa valido.\n\n", m_MapName.c_str());
 	printf("Previously, we ignored all invalid map behaviour, however this only hides\n");
 	printf("very real problems - especially with things like AI pathfinding.\n\n");
 	printf("This problem is most likely occur with maps tweaked to use a different\n");
 	printf("map size. Unfortunately, doing this means data after that (almost everything)\n");
 	printf("becomes corrupt, which is known to cause extremely 'unusual' buggy behaviour.\n\n");
 	printf("It is recommended you use a map built for this zone, or at the very least,\n");\
-		printf("you should use a map originally built for the same zone size.\n\n");
+	printf("you should use a map originally built for the same zone size.\n\n");
 	ASSERT(0);
 }
 

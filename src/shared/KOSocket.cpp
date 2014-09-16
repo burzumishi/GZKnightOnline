@@ -13,7 +13,7 @@ KOSocket::KOSocket(uint16 socketID, SocketMgr * mgr, SOCKET fd, uint32 sendBuffe
 
 void KOSocket::OnConnect()
 {
-	TRACE("Connection received from %s:%d\n", GetRemoteIP().c_str(), GetRemotePort());
+	TRACE("Conexion recivida desde %s:%d\n", GetRemoteIP().c_str(), GetRemotePort());
 
 	m_remaining = 0;
 	m_usingCrypto = false;

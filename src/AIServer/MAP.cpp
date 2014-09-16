@@ -78,7 +78,7 @@ bool MAP::Initialize(_ZONE_INFO *pZone)
 	{
 		if (!LoadRoomEvent())
 		{
-			printf("ERROR: Unable to load room event (%d.aievt) for map - %s\n", 
+			printf("ERROR: No se puede cargar el fichero de eventos (%d.aievt) para el mapa - %s\n", 
 				m_byRoomEvent, pZone->m_MapName.c_str());
 			m_byRoomEvent = 0;
 		}
@@ -205,7 +205,7 @@ bool MAP::LoadRoomEvent()
 	ifstream is(filename);
 	if (!is)
 	{
-		printf("ERROR: %s does not exist or no permission to access.\n", filename.c_str());
+		printf("ERROR: %s no existe o no tiene permisos de acceso.\n", filename.c_str());
 		return false;
 	}
 
@@ -327,7 +327,7 @@ bool MAP::LoadRoomEvent()
 	return true;
 
 cancel_event_load:
-	printf("Unable to load AI EVT (%d.aievt), failed in or near event number %d.\n", 
+	printf("No ha sido posible cargar AI EVT (%d.aievt), fallo en o cerca del evento numero %d.\n", 
 		m_byRoomEvent, event_num);
 	is.close();
 	return false;

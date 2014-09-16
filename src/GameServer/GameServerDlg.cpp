@@ -99,7 +99,7 @@ bool CGameServerDlg::Startup()
 
 	if (!g_pMain->m_socketMgr.Listen(_LISTEN_PORT, MAX_USER))
 	{
-		printf(_T("ERROR: Failed to listen on server port (%d)."), _LISTEN_PORT);
+		printf(_T("ERROR: No se puede iniciar el servidor en el puerto especificado (%d)."), _LISTEN_PORT);
 		return false;
 	}
 
@@ -1404,11 +1404,11 @@ void CGameServerDlg::HandleConsoleCommand(const char * msg)
 
 	if (ProcessServerCommand(message))
 	{
-		printf("Command accepted.\n");
+		printf("Comando aceptado.\n");
 		return;
 	}
 
-	printf("Invalid command. If you're trying to send a notice, please use /notice\n");
+	printf("Comando invalido. Si intenta enviar una notificacion, use /notice\n");
 }
 
 bool CGameServerDlg::LoadNoticeData()
@@ -1422,7 +1422,7 @@ bool CGameServerDlg::LoadNoticeData()
 
 	if (!file)
 	{
-		TRACE("Notice.txt could not be opened.\n");
+		TRACE("No se puede abrir Notice.txt.\n");
 		return false;
 	}
 
@@ -1430,14 +1430,14 @@ bool CGameServerDlg::LoadNoticeData()
 	{
 		if (count > 19)
 		{
-			TRACE("Too many lines in Notice.txt\n");
+			TRACE("Demasiadas lineas en Notice.txt\n");
 			break;
 		}
 
 		getline(file, line);
 		if (line.length() > 128)
 		{
-			TRACE("Notice.txt contains line that exceeds the limit of 128 characters.\n");
+			TRACE("Notice.txt contiene una linea que excede el limite de 128 caracteres.\n");
 			break;
 		}
 
@@ -2066,32 +2066,32 @@ void CGameServerDlg::SendFlyingSantaOrAngel()
 
 CGameServerDlg::~CGameServerDlg() 
 {
-	printf("Waiting for timer threads to exit...");
+	printf("Esperando a finalizar los hilos del temporizador ...");
 	foreach (itr, g_timerThreads)
 	{
 		(*itr)->waitForExit();
 		delete (*itr);
 	}
-	printf(" exited.\n");
+	printf(" finalizados.\n");
 
-	printf("Suspending server...\n");
+	printf("Suspendiendo el servidor ...\n");
 	m_socketMgr.SuspendServer();
 
 	// Cleanup our script pool & consequently ensure all scripts 
 	// finish execution before proceeding.
 	// This prevents us from freeing data that's in use.
-	printf("Shutting down Lua engine...");
+	printf("Finalizando el motor de scripting Lua ...");
 	m_luaEngine.Shutdown();
-	printf(" done.\n");
+	printf(" hecho.\n");
 
-	printf("Shutting down database system...");
+	printf("Finalizando el sistema de base de datos ...");
 	DatabaseThread::Shutdown();
-	printf(" done.\n");
+	printf(" hecho.\n");
 
-	printf("Shutting down socket system...");
+	printf("Finalizando el sistema de conexiones ...");
 	m_aiSocketMgr.Shutdown();
 	m_socketMgr.Shutdown();
-	printf(" done.\n");
+	printf(" hecho.\n");
 
 	CUser::CleanupChatCommands();
 	CGameServerDlg::CleanupServerCommands();

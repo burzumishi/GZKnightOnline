@@ -58,7 +58,7 @@ bool CServerDlg::Startup()
 
 	// Server Start
 	DateTime time;
-	printf("Server started on %02d-%02d-%04d at %02d:%02d.\n\n", time.GetDay(), time.GetMonth(), time.GetYear(), time.GetHour(), time.GetMinute());
+	printf("GameServer iniciado el %02d-%02d-%04d a las %02d:%02d.\n\n", time.GetDay(), time.GetMonth(), time.GetYear(), time.GetHour(), time.GetMinute());
 
 	//----------------------------------------------------------------------
 	//	DB part initialize
@@ -68,7 +68,7 @@ bool CServerDlg::Startup()
 	if (!m_GameDB.Connect(m_strGameDSN, m_strGameUID, m_strGamePWD, false))
 	{
 		OdbcError *pError = m_GameDB.GetError();
-		printf("ERROR: Could not connect to the database server, received error:\n%s\n", 
+		printf("ERROR: No se puede conectar a la base de datos, se ha recibido el error:\n%s\n", 
 			pError->ErrorMessage.c_str());
 		delete pError;
 		return false;
@@ -195,7 +195,7 @@ bool CServerDlg::CreateNpcThread()
 		}
 	}
 
-	printf("[Monster Init - %d, threads=%lld]\n", (uint16) m_TotalNPC, (long long) m_arNpcThread.size());
+	printf("[Criaturas Inicio - %d, threads=%lld]\n", (uint16) m_TotalNPC, (long long) m_arNpcThread.size());
 	return true;
 }
 
@@ -263,7 +263,7 @@ bool CServerDlg::LoadSpawnCallback(OdbcCommand *dbCommand)
 
 		if (pNpcTable == nullptr)
 		{
-			printf("NPC %d not found in %s table.\n", sSid, bMonster ? "K_MONSTER" : "K_NPC");
+			printf("NPC %d no encontrado en la tabla %s.\n", sSid, bMonster ? "K_MONSTER" : "K_NPC");
 			delete pNpc;
 			return false;
 		}
@@ -359,7 +359,7 @@ bool CServerDlg::LoadSpawnCallback(OdbcCommand *dbCommand)
 		pNpc->m_pMap = GetZoneByID(pNpc->GetZoneID());
 		if (pNpc->GetMap() == nullptr)
 		{
-			printf(_T("Error: NPC %d in zone %d that does not exist."), sSid, bZoneID);
+			printf(_T("Error: NPC %d en la zona %d que no existe."), sSid, bZoneID);
 			delete pNpc;
 			return false;
 		}
@@ -423,7 +423,7 @@ bool CServerDlg::MapFileLoad()
 		MAP *pMap = new MAP();
 		if (!pMap->Initialize(pZone))
 		{
-			printf("ERROR: Unable to load SMD - %s\n", pZone->m_MapName.c_str());
+			printf("ERROR: No se puede cargar el fichero SMD - %s\n", pZone->m_MapName.c_str());
 			delete pZone;
 			delete pMap;
 			g_arZone.DeleteAllData();
@@ -537,7 +537,7 @@ bool CServerDlg::SetUserPtr(uint16 sessionId, CUser * pUser)
 	auto itr = m_pUser.find(sessionId);
 	if (itr != m_pUser.end())
 	{
-		TRACE("Warning: User %u has not been removed from the session map.\n", sessionId);
+		TRACE("Warning: El usuario %u no ha sido eliminado del mapa de sesiones.\n", sessionId);
 		return false; 
 	}
 
@@ -587,7 +587,7 @@ void CServerDlg::DeleteAllUserList(CGameSocket *pSock)
 	// If a server disconnected, show it...
 	if (pSock != nullptr)
 	{
-		printf("[GameServer disconnected = %s]\n", pSock->GetRemoteIP().c_str());
+		printf("[GameServer desconectado = %s]\n", pSock->GetRemoteIP().c_str());
 		return;
 	}
 
@@ -625,7 +625,7 @@ void CServerDlg::DeleteAllUserList(CGameSocket *pSock)
 	m_bFirstServerFlag = false;
 	TRACE("*** DeleteAllUserList - End *** \n");
 
-	printf("[ DELETE All User List ]\n");
+	printf("[ ELIMINAR Listado de usuarios completo ]\n");
 }
 
 void CServerDlg::Send(Packet * pkt)
@@ -793,7 +793,7 @@ CServerDlg::~CServerDlg()
 {
 	g_bNpcExit = true;
 
-	printf("Waiting for NPC threads to exit...");
+	printf("Esperando a finalizar los hilos de NPC ...");
 	foreach (itr, m_arNpcThread)
 	{
 		CNpcThread * pThread = itr->second;
@@ -811,21 +811,21 @@ CServerDlg::~CServerDlg()
 	}
 	m_arEventNpcThread.clear();
 
-	printf(" exited.\n");
+	printf(" finalizados.\n");
 
-	printf("Waiting for zone event thread to exit...");
+	printf("Esperando a finalizar los hilos de eventos de zona ...");
 	m_zoneEventThread.waitForExit();
-	printf(" exited.\n");
+	printf(" finalizados.\n");
 
-	printf("Waiting for timer threads to exit...");
+	printf("Esperando a finalizar los hilos del temporizador ...");
 	foreach (itr, g_timerThreads)
 	{
 		(*itr)->waitForExit();
 		delete (*itr);
 	}
-	printf(" exited.\n");
+	printf(" finalizados.\n");
 
-	printf("Freeing user sessions...");
+	printf("Liberando las sesiones de usuarios ...");
 	for (int i = 0; i < MAX_USER; i++)
 	{
 		if (m_pUser[i] != nullptr)
@@ -834,11 +834,11 @@ CServerDlg::~CServerDlg()
 			m_pUser[i] = nullptr;
 		}
 	}
-	printf(" done.\n");
+	printf(" hecho.\n");
 
 	m_ZoneNpcList.clear();
 
-	printf("Shutting down socket system...");
+	printf("Finalizando sistema de conexiones ...");
 	m_socketMgr.Shutdown();
-	printf(" done.\n");
+	printf(" hecho.\n");
 }

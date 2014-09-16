@@ -37,7 +37,7 @@ TCHAR * OdbcRecordset::Read(bool bAllowEmptyTable /*= false*/)
 		if (bAllowEmptyTable)
 			return nullptr;
 
-		_stprintf(szError, _T("%s table is empty."), GetTableName().c_str());
+		_stprintf(szError, _T("%s la tabla esta vacia."), GetTableName().c_str());
 		return szError;
 	}
 
@@ -48,7 +48,7 @@ TCHAR * OdbcRecordset::Read(bool bAllowEmptyTable /*= false*/)
 		// to better allow for this scenario.
 		if (!Fetch())
 		{
-			_stprintf(szError, _T("Could not fetch row in table %s."), GetTableName().c_str());
+			_stprintf(szError, _T("No se han podido selecionar columnas en la tabla %s."), GetTableName().c_str());
 			return szError;
 		}
 	} while (_dbCommand->MoveNext());

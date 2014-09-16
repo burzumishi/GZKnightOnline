@@ -22,23 +22,23 @@ bool LoginServer::Startup()
 
 	if (!m_DBProcess.Connect(m_ODBCName, m_ODBCLogin, m_ODBCPwd)) 
 	{
-		printf("ERROR: Unable to connect to the database using the details configured.\n");
+		printf("ERROR: No es posible conectarse a la base de datos con la configuracion actual.\n");
 		return false;
 	}
 
 	printf("Connected to database server.\n");
 	if (!m_DBProcess.LoadVersionList())
 	{
-		printf("ERROR: Unable to load the version list.\n");
+		printf("ERROR: No ha sido posible cargar el listado de versiones.\n");
 		return false;
 	}
 
-	printf("Latest version in database: %d\n", GetVersion());
+	printf("Ultima version en la base de datos: %d\n", GetVersion());
 	InitPacketHandlers();
 
 	if (!m_socketMgr.Listen(_LISTEN_PORT, MAX_USER))
 	{
-		printf("ERROR: Failed to listen on server port.\n");
+		printf("ERROR: No se puede escuchar en el puerto especificado.\n");
 		return false;
 	}
 
@@ -228,7 +228,7 @@ void LoginServer::ReportSQLError(OdbcError *pError)
 
 LoginServer::~LoginServer() 
 {
-	printf("Waiting for timer threads to exit...");
+	printf("Esperando a cerrar los hilos del temporizador ...");
 	foreach (itr, g_timerThreads)
 	{
 		(*itr)->waitForExit();
@@ -247,7 +247,7 @@ LoginServer::~LoginServer()
 	if (m_fp != nullptr)
 		fclose(m_fp);
 
-	printf("Shutting down socket system...");
+	printf("Finalizando sistema de conexiones ...");
 	m_socketMgr.Shutdown();
-	printf(" done.\n");
+	printf(" hecho.\n");
 }

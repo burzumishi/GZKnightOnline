@@ -17,10 +17,10 @@ void StartTimeThread()
 
 void CleanupTimeThread()
 {
-	printf("Waiting for time thread to shutdown...");
+	printf("Esperando a finalizar el hilo del temporizador ...");
 	g_bRunningThread = false;
 	s_timeThread.waitForExit();
-	printf(" done.\n");
+	printf(" hecho.\n");
 }
 
 uint32 THREADCALL TimeThread(void * lpParam)

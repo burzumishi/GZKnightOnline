@@ -114,7 +114,7 @@ void LoginSession::HandleLogin(Packet & pkt)
 		break;
 	}
 
-	printf(string_format("Login : %s / PW : %s / Authentication : %s\n",account.c_str(),password.c_str(),sAuthMessage.c_str()).c_str());
+	printf(string_format("Login : %s / PW : %s / Autentificacion : %s\n",account.c_str(),password.c_str(),sAuthMessage.c_str()).c_str());
 
 	result << uint8(resultCode);
 	if (resultCode == AUTH_SUCCESS)

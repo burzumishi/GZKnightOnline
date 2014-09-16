@@ -2235,6 +2235,7 @@ void CUser::ItemGet(Packet & pkt)
 			|| (pParty = g_pMain->GetPartyPtr(GetPartyID())) == nullptr)
 		{
 			// NOTE: Coins have been checked already.
+			
 			if (m_bPremiumType > 0)
 				pGold = pItem->sCount * (100 + g_pMain->m_PremiumItemArray.GetData(m_bPremiumType)->NoahPercent) / 100;
 			else

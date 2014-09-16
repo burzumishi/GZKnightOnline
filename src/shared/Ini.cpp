@@ -18,7 +18,7 @@ bool CIni::Load(const char * lpFilename /*= nullptr*/)
 	std::ifstream file(fn);
 	if (!file)
 	{
-		printf("Warning: %s does not exist, will use configured defaults.\n", fn);
+		printf("AVISO: %s no existe, se usa la configuracion por defecto.\n", fn);
 		return false;
 	}
 

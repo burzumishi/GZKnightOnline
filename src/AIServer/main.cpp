@@ -12,7 +12,7 @@ bool g_bRunning = true;
 
 int main()
 {
-	SetConsoleTitle("AI Server for Knight Online v" STRINGIFY(__VERSION));
+	SetConsoleTitle("AIServer para [GZ] KnightOnline v" STRINGIFY(__VERSION));
 
 #ifdef WIN32
 	// Override the console handler
@@ -29,7 +29,7 @@ int main()
 	// Startup server
 	if (g_pMain->Startup())
 	{
-		printf("\nServer started up successfully!\n");
+		printf("\n[GZKO] AIServer se ha iniciado correctamente!\n");
 
 		// Wait until console's signaled as closing
 		s_hEvent.Wait();
@@ -41,7 +41,7 @@ int main()
 #endif
 	}
 
-	printf("Server shutting down, please wait...\n");
+	printf("[GZKO] AIServer finalizando ...\n");
 
 	// This seems redundant, but it's not. 
 	// We still have the destructor for the dialog instance, which allows time for threads to properly cleanup.
