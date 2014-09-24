@@ -55,14 +55,8 @@ Software:
 * MSSQL Server 2008 r2 (SQL)
 
 
-Autores:
---------
-
-* Project owner is @twostars
-* Modificado por @burzumishi para [GZKO]
-
-
-## Podes colaborar con GZKnightOnline:
+Podes colaborar con GZKnightOnline:
+-----------------------------------
 
  - Programando o Servidor de Contas de Usuario e Listado de Servidores.
  - Programando o Servidor de Intelixencia de Criaturas.
@@ -76,6 +70,15 @@ Autores:
  - Editando o Cliente utilizado polos usuarios.
  - Editando os contidos da base de datos.
 
-## Reporte de Incidencias:
+
+Reporte de Incidencias:
+-----------------------
 
 Para publicar incidencias con **GZKnightOnline** podes facelo dende a [Páxina de Incidencias de GitHub] (https://github.com/burzumishi/GZKnightOnline/issues)
+
+
+Autores:
+--------
+
+* Project owner is @twostars
+* Modificado por @burzumishi para [GZKO]
