@@ -61,3 +61,21 @@ Autores:
 * Project owner is @twostars
 * Modificado por @burzumishi para [GZKO]
 
+
+## Podes colaborar con GZKnightOnline:
+
+ - Programando o Servidor de Contas de Usuario e Listado de Servidores.
+ - Programando o Servidor de Intelixencia de Criaturas.
+ - Programando o Servidor de Sistema de Xogo.
+ - Programando o Sistema de Contas Premium.
+ - Programando e administrando a páxina web.
+ - Editando NPC: Criaturas.
+ - Editando Obxetos.
+ - Editando Misions, Taboas de Maxias, Conxuros e Skills
+ - Editando Mapas
+ - Editando o Cliente utilizado polos usuarios.
+ - Editando os contidos da base de datos.
+
+## Reporte de Incidencias:
+
+Para publicar incidencias con **GZKnightOnline** podes facelo dende a [Páxina de Incidencias de GitHub] (https://github.com/burzumishi/GZKnightOnline/issues)
