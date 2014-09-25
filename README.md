@@ -37,8 +37,9 @@ Características:
 Publicacións:
 -------------
 
- - Versión inicial GZKO v1886: [**GZKnightOnline1886_v0.0.1.zip**] (https://github.com/burzumishi/GZKnightOnline/releases/download/v0.0.1/GZKnightOnline1886_v0.0.1.zip)
+ - [**GZKnightOnline1886_v0.0.1.zip**] (https://github.com/burzumishi/GZKnightOnline/releases/download/v0.0.1/GZKnightOnline1886_v0.0.1.zip)
 
+ - [Ver tóda-las publicacións] (https://github.com/burzumishi/GZKnightOnline/releases)
 
 Contidos da publicación:
 ------------------------
