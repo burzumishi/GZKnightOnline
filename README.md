@@ -2,15 +2,15 @@
 ==========================
 
 
-Proxecto Servidor "[GZ] Knight Online v1886".
+Proxecto Servidor **[GZ] Knight Online v1886**.
 
 
 Obxetivos:
 ----------
 
-Creacion dunha emulación do servidor de "Knight Online v1886" completa e traducida ao "Galego".
+Creacion dunha emulación do servidor de **Knight Online v1886** completa e traducida ao **Galego**.
 
-O proxecto inclue a traducción dos ficheiros do cliente empregado polos usuarios, a partires do cliente de "USKO v1886".
+O proxecto inclue a traducción dos ficheiros do cliente empregado polos usuarios, a partires do cliente de **USKO v1886**.
 
 Knight Online é un xogo moi popular, sinxelo e extendido por todo o mundo: USA, Japón, China, Korea, Malasia, Turkia, ...
 
@@ -44,9 +44,9 @@ Publicacións:
 Contidos da publicación:
 ------------------------
 
- - src: Source Code files.
- - bin: Runtime & Binary files: Maps, Quests, Exes ...
- - sql: SQL Database Creation & Update files.
+ - **src**: Source Code files.
+ - **bin**: Runtime & Binary files: Maps, Quests, Exes ...
+ - **sql**: SQL Database Creation & Update files.
 
 
 Software:
