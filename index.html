@@ -3,45 +3,60 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
     <title>GZKnightOnline by burzumishi</title>
   </head>
 
   <body>
-    <div id="container">
-      <div class="inner">
+    <a id="forkme_banner" href="https://github.com/burzumishi/GZKnightOnline">View on GitHub</a>
+    <div class="shell">
 
-        <header>
-          <h1>GZKnightOnline</h1>
-          <h2></h2>
-        </header>
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>GZKnightOnline</h1>
+            <h2></h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/burzumishi/GZKnightOnline/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/burzumishi/GZKnightOnline/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/burzumishi/GZKnightOnline" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/burzumishi/GZKnightOnline/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/burzumishi/GZKnightOnline/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
 
-        <hr>
 
-        <section id="main_content">
-          <h1>
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
 <a name="gz-knight-online-v1886" class="anchor" href="#gz-knight-online-v1886"><span class="octicon octicon-link"></span></a>[GZ] Knight Online (v1886)</h1>
 
-<p>Proxecto Servidor "[GZ] Knight Online v1886".</p>
+<p>Proxecto Servidor <strong>[GZ] Knight Online v1886</strong>.</p>
 
 <h2>
 <a name="obxetivos" class="anchor" href="#obxetivos"><span class="octicon octicon-link"></span></a>Obxetivos:</h2>
 
-<p>Creacion dunha emulación do servidor de "Knight Online v1886" completa e traducida ao "Galego".</p>
+<p>Creacion dunha emulación do servidor de <strong>Knight Online v1886</strong> completa e traducida ao <strong>Galego</strong>.</p>
 
-<p>O proxecto inclue a traducción dos ficheiros do cliente empregado polos usuarios, a partires do cliente de "USKO v1886".</p>
+<p>O proxecto inclue a traducción dos ficheiros do cliente empregado polos usuarios, a partires do cliente de <strong>USKO v1886</strong>.</p>
 
 <p>Knight Online é un xogo moi popular, sinxelo e extendido por todo o mundo: USA, Japón, China, Korea, Malasia, Turkia, ...</p>
 
@@ -71,14 +86,18 @@
 <a name="publicaci%C3%B3ns" class="anchor" href="#publicaci%C3%B3ns"><span class="octicon octicon-link"></span></a>Publicacións:</h2>
 
 <ul>
-<li>Versión inicial GZKO v1886.0.1</li>
+<li><p><a href="https://github.com/burzumishi/GZKnightOnline/releases/download/v0.0.1/GZKnightOnline1886_v0.0.1.zip"><strong>GZKnightOnline1886_v0.0.1.zip</strong></a></p></li>
+<li><p><a href="https://github.com/burzumishi/GZKnightOnline/releases">Ver tóda-las publicacións</a></p></li>
 </ul><h2>
 <a name="contidos-da-publicaci%C3%B3n" class="anchor" href="#contidos-da-publicaci%C3%B3n"><span class="octicon octicon-link"></span></a>Contidos da publicación:</h2>
 
 <ul>
-<li>src: Source Code files.</li>
-<li>bin: Runtime &amp; Binary files: Maps, Quests, Exes ...</li>
-<li>sql: SQL Database Creation &amp; Update files.</li>
+<li>
+<strong>src</strong>: Source Code files.</li>
+<li>
+<strong>bin</strong>: Runtime &amp; Binary files: Maps, Quests, Exes ...</li>
+<li>
+<strong>sql</strong>: SQL Database Creation &amp; Update files.</li>
 </ul><h2>
 <a name="software" class="anchor" href="#software"><span class="octicon octicon-link"></span></a>Software:</h2>
 
@@ -113,15 +132,22 @@
 </li>
 <li>Modificado por <a href="https://github.com/burzumishi" class="user-mention">@burzumishi</a> para [GZKO]</li>
 </ul>
-        </section>
+      </section>
 
-        <footer>
-          GZKnightOnline is maintained by <a href="https://github.com/burzumishi">burzumishi</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/burzumishi">burzumishi</a> can be found on <a href="https://github.com/burzumishi/GZKnightOnline">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
 
-        
-      </div>
     </div>
+
+    
   </body>
 </html>
